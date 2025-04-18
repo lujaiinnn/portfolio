@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hospital SQL Database Project</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Hospital SQL Database Project</h1>
+    <p>"Managing Hospital Data with SQL"</p>
+  </section>
+
+  <div class="container">
+    <p>The Hospital SQL Database Project was created to demonstrate the management of hospital data through SQL. The project focuses on handling patient records, doctor information, appointments, medical records, and billing details within a hospital's database.</p>
+
+    <p>The database structure includes the following main entities:</p>
+    <ul>
+      <li>Patients</li>
+      <li>Doctors</li>
+      <li>Departments</li>
+      <li>Appointments</li>
+      <li>Medical Records</li>
+      <li>Billing</li>
+    </ul>
+
+    <p><strong>SQL & Database Design:</strong> The primary goal was to design and implement a relational database to store and manage hospital information. The main tables I created were:</p>
+
+    <ul>
+      <li><strong>Patients:</strong> Stores patient info like name, age, gender, contact, and address.</li>
+      <li><strong>Doctors:</strong> Stores doctor name, specialty, department, and contact info.</li>
+      <li><strong>Departments:</strong> Lists various hospital departments like Cardiology, Neurology, etc.</li>
+      <li><strong>Appointments:</strong> Links patients and doctors with date and time.</li>
+      <li><strong>Medical Records:</strong> Contains diagnosis and treatment history for each patient.</li>
+      <li><strong>Billing:</strong> Stores billing details like amount, payment method, and date.</li>
+    </ul>
+
+    <p><strong>Sample SQL Queries:</strong></p>
+    <p>For instance, here’s how the Patients table was created:</p>
+    <pre>
+CREATE TABLE Patients (
+    PatientID INT PRIMARY KEY,
+    Name VARCHAR(100),
+    Age INT,
+    Gender VARCHAR(10),
+    Contact VARCHAR(15),
+    Address TEXT
+);
+    </pre>
+    <p>For joining tables, here’s a query that links patient and doctor appointments:</p>
+    <pre>
+SELECT A.AppointmentID, P.Name AS Patient, D.Name AS Doctor, A.AppointmentDate
+FROM Appointments A
+JOIN Patients P ON A.PatientID = P.PatientID
+JOIN Doctors D ON A.DoctorID = D.DoctorID;
+    </pre>
+
+    <p><strong>Challenges:</strong> One of the key challenges I faced was understanding the importance of Foreign Keys and how they maintain relationships between the tables. Another challenge was normalizing the data to ensure that redundancy and inconsistencies were minimized.</p>
+
+    <p><strong>Conclusion:</strong> This project not only deepened my understanding of SQL but also helped me see how SQL is used to handle real-world data, especially in critical fields like healthcare. I would highly recommend anyone learning SQL to explore projects like this, as they give a great hands-on experience with relational databases.</p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Source Code</div>
+      <a href="https://github.com/lujaiinnn/SQL_PROJECTS/blob/main/hospital_database_project-sample.sql" target="_blank">View SQL Code</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>
+

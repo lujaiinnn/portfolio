@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sales SQL Database Project</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Sales SQL Database Project</h1>
+    <p>"Tracking Sales and Analyzing Business Performance with SQL"</p>
+  </section>
+
+  <div class="container">
+    <p>The Sales SQL Database Project is designed to simulate a sales environment that captures customer, product, region, and transactional data. The database allows businesses to track sales activity, analyze product performance, and make data-driven decisions.</p>
+
+    <p>The project aims to design a fully functional relational database using MySQL to store and manage sales-related data. By utilizing SQL queries, we can gain insights into key metrics such as total revenue, product performance, customer behavior, and regional sales trends.</p>
+
+    <p>The key objectives of this project include:</p>
+    <ul>
+      <li>Track customer purchases over time</li>
+      <li>Determine top-performing products</li>
+      <li>Analyze sales performance by product and region</li>
+      <li>Identify peak revenue periods</li>
+      <li>Enable decision-making based on customer behavior and trends</li>
+    </ul>
+
+    <p>The database structure consists of four main tables:</p>
+    <ul>
+      <li><strong>Customers</strong>: Tracks customer details</li>
+      <li><strong>Regions</strong>: Represents geographical market regions</li>
+      <li><strong>Products</strong>: Stores information about products like name, category, and price</li>
+      <li><strong>Sales</strong>: Captures transaction data, linking customers and products</li>
+    </ul>
+
+    <p>Here is an overview of the table structure:</p>
+
+    <p><strong>Regions Table</strong></p>
+    <pre>
+      CREATE TABLE Regions (
+        region_id INT PRIMARY KEY,
+        region_name VARCHAR(100)
+      );
+    </pre>
+
+    <p><strong>Customers Table</strong></p>
+    <pre>
+      CREATE TABLE Customers (
+        customer_id INT PRIMARY KEY,
+        name VARCHAR(100),
+        region_id INT,
+        FOREIGN KEY (region_id) REFERENCES Regions(region_id)
+      );
+    </pre>
+
+    <p><strong>Products Table</strong></p>
+    <pre>
+      CREATE TABLE Products (
+        product_id INT PRIMARY KEY,
+        product_name VARCHAR(100),
+        category VARCHAR(100),
+        price DECIMAL(10,2)
+      );
+    </pre>
+
+    <p><strong>Sales Table</strong></p>
+    <pre>
+      CREATE TABLE Sales (
+        sale_id INT PRIMARY KEY,
+        product_id INT,
+        customer_id INT,
+        quantity INT,
+        sale_date DATE,
+        FOREIGN KEY (product_id) REFERENCES Products(product_id),
+        FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+      );
+    </pre>
+
+    <p>The database supports various SQL queries for generating insights such as:</p>
+    <ul>
+      <li>Total revenue generated</li>
+      <li>Revenue by month</li>
+      <li>Top-selling products</li>
+      <li>Revenue by region</li>
+      <li>Customer purchase behavior analysis</li>
+    </ul>
+
+    <p>For example, to calculate the total revenue:</p>
+    <pre>
+      SELECT SUM(p.price * s.quantity) AS total_revenue
+      FROM Sales s
+      JOIN Products p ON s.product_id = p.product_id;
+    </pre>
+
+    <p>Additional insights from the data include:</p>
+    <ul>
+      <li>Peak Sales Months</li>
+      <li>High-Performing Products</li>
+      <li>Customer Segmentation</li>
+      <li>Regional Demand Analysis</li>
+    </ul>
+
+    <p>The project can be further extended by adding features like inventory management, supplier data, or integration with business intelligence tools like Power BI or Tableau.</p>
+
+    <p><strong>Conclusion:</strong> The Sales SQL Database Project showcases the power of relational databases and SQL in managing and analyzing business data. It provides valuable insights into customer behavior, sales performance, and market trends, making it an essential tool for data-driven decision-making.</p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Source Code</div>
+      <a href="https://github.com/lujaiinnn/SQL_PROJECTS/blob/main/sales_database_project-sample.sql" target="_blank">View Code</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

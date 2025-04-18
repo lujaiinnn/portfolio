@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Sales Insight Dashboard</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+
+
+    
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Smart Sales Insight Dashboard</h1>
+    <p>"Sales Intelligence Hub: An Interactive Excel Dashboard for Data-Driven Decisions"</p>
+  </section>
+
+  <div class="container">
+    <p><strong>Purpose:</strong> This Excel project was designed to analyze and visualize comprehensive sales data across various dimensions—products, customers, regions, and timelines. The core objective was to gain clear insights into product performance, customer behavior, and regional trends through a highly interactive and user-friendly dashboard. By transforming raw transactional data into a dynamic visualization tool, it empowers business users and decision-makers to quickly spot patterns, track targets, and optimize sales strategies.</p>
+
+    <p><strong>Features & Techniques Used – Going Beyond Basic Excel</strong><br>
+      • Interactive Sales Dashboard:<br>
+      - Built using PivotTables, PivotCharts, and Slicers.<br>
+      - Seamless timeline slicers for time-based trends.<br>
+      • Top 5 Analysis:<br>
+      - Advanced filters for identifying top customers/products.<br>
+      • Comprehensive KPIs:<br>
+      - Net Sales, Discounts, and Performance tags.<br>
+      • Conditional Formatting:<br>
+      - Heatmaps and visual sales cues.<br>
+      • Target Tracking:<br>
+      - Visual tracker for monthly/quarterly goals.<br>
+      • Data Cleaning:<br>
+      - Standardized tables and consistency checks.
+    </p>
+
+    <p><strong>Creative Value – What Makes It Special:</strong><br>
+      • User-Centric Design with goal-oriented visuals.<br>
+      • Simulates real business intelligence systems.<br>
+      • Scalable for businesses of any size.<br>
+      • Future enhancements like Power BI integration, auto-reports, and reorder alerts.
+    </p>
+
+    <p><strong>Data Exploration & Insights – Turning Numbers into Strategy</strong><br>
+      • Customer Behavior: Engagement insights from top customers.<br>
+      • Product Performance: Monthly analysis of hot/cold items.<br>
+      • Regional Intelligence: Team comparison across zones.<br>
+      • Actionable Insights: Seasonal trends, underperformers, and loyal buyers.
+    </p>
+
+    <p><strong>Business Impact & Vision</strong><br>
+      • Saves time with auto-filters & visuals.<br>
+      • Supports informed, data-driven decisions.<br>
+      • Adaptable for any industry.<br>
+      • Foundation for company-wide data culture.<br>
+      • Future: Live data via APIs, Python AI forecasts, automated alerts.
+    </p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Access Full Excel File</div>
+      <a href="#">Download Now</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    // Scroll to top
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

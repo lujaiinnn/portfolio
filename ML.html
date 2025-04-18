@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insurance Dataset - Regression Models</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Insurance Dataset Regression Models</h1>
+    <p>"Exploring Medical Insurance Costs with Regression Models"</p>
+  </section>
+
+  <div class="container">
+    <p>The Insurance dataset consists of various features like age, BMI, number of children, smoking status, and region that can be used to predict the insurance charges for an individual. In this blog, we apply multiple regression models to predict medical insurance charges using the dataset's features.</p>
+
+    <p>The regression models we use include:</p>
+    <ul>
+      <li>Linear Regression</li>
+      <li>Polynomial Regression</li>
+      <li>Decision Tree Regression</li>
+      <li>Random Forest Regression</li>
+    </ul>
+
+    <p>We start by preprocessing the data, where we handle categorical variables like sex, smoker status, and region by converting them into numeric form using one-hot encoding. This transformation makes the data suitable for machine learning models.</p>
+
+    <p><strong>Linear Regression:</strong> A baseline regression model is applied to predict insurance charges based on the input features. The results are used as a benchmark for comparing more complex models.</p>
+
+    <p><strong>Polynomial Regression:</strong> A non-linear approach is applied to capture the relationship between the features and the target variable (charges) more accurately.</p>
+
+    <p><strong>Decision Tree Regression:</strong> A decision tree model is used to create a tree structure for predicting insurance charges, and we also tune hyperparameters for better accuracy.</p>
+
+    <p><strong>Random Forest Regression:</strong> A more powerful model that aggregates the predictions of multiple decision trees, helping to reduce overfitting and improve accuracy. Hyperparameter tuning is also applied for optimal results.</p>
+
+    <p><strong>Evaluation:</strong> We evaluate the performance of each model using metrics such as Mean Absolute Error (MAE), Mean Squared Error (MSE), and the R² score. Based on these metrics, we conclude that the Random Forest Regression model performs the best, with an R² score of 86.17%, followed by Polynomial Regression.</p>
+
+    <p><strong>Conclusion:</strong> The Random Forest model with hyperparameter tuning is the most effective at predicting insurance charges. However, Polynomial Regression also provides useful insights into the non-linear relationships between the features and target variable.</p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Source Code</div>
+      <a href="http://github.com/lujaiinnn/MACHINE_LEARNING_PROJECTS/blob/main/sample_insurance_PROJECT_ML.ipynb" target="_blank">View Notebook</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

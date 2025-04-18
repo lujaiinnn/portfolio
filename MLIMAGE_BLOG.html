@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image Classification Using SVM: Horse vs Human</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Image Classification Using SVM: Horse vs Human</h1>
+    <p>"Differentiating Horses and Humans with Support Vector Machines"</p>
+  </section>
+
+  <div class="container">
+    <p>In this project, we applied traditional machine learning methods to classify images of horses and humans. We used a Support Vector Machine (SVM) model, which is effective for binary classification tasks, and implemented it using Python. Our dataset consisted of images labeled as either 'horse' or 'human'. We preprocessed the images, trained an SVM model, and evaluated its performance. The goal was to achieve a high accuracy in distinguishing between the two categories.</p>
+
+    <p>The steps followed in the project include:</p>
+    <ul>
+      <li>Image Preprocessing</li>
+      <li>Model Training using Support Vector Machine (SVM)</li>
+      <li>Model Evaluation</li>
+      <li>Prediction on new images</li>
+    </ul>
+
+    <p><strong>Image Preprocessing:</strong> The images were resized to 64x64 pixels and flattened to one-dimensional arrays for input into the SVM model. Labels were assigned: '0' for horses and '1' for humans. The dataset was split into training and testing sets in an 80-20 ratio.</p>
+
+    <p><strong>Support Vector Machine (SVM):</strong> We used the Support Vector Classification (SVC) model from scikit-learn with a linear kernel. The model attempts to find the best hyperplane that separates the two classes with the maximum margin.</p>
+
+    <p><strong>Model Evaluation:</strong> We evaluated the model using accuracy, confusion matrix, and classification report. The model achieved an accuracy of around 91%, with balanced precision and recall for both classes.</p>
+
+    <p><strong>Prediction on New Images:</strong> We tested the trained model on new images not included in the training or test sets. The images were resized and preprocessed in the same way before being passed to the model for classification. The predicted label was displayed along with the image.</p>
+
+    <p><strong>Challenges Encountered:</strong> During implementation, we faced some issues with image dimension mismatches and class labeling errors. These were resolved by ensuring consistent preprocessing and checking the order of the classes when labeling images.</p>
+
+    <p><strong>Future Improvements:</strong> Future work could include using Convolutional Neural Networks (CNNs) for better feature extraction, data augmentation to increase the dataset size, and creating a web application to allow users to upload and classify images on the fly.</p>
+
+    <p><strong>Conclusion:</strong> This project demonstrates the effectiveness of SVM for simple image classification tasks. Although not as powerful as CNNs, SVM offers a simple and interpretable solution that can be applied to binary image classification problems.</p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Source Code</div>
+      <a href="http://github.com/lujaiinnn/MACHINE_LEARNING_PROJECTS/blob/main/horse_vs_human_svm.ipynb" target="_blank">View Notebook</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

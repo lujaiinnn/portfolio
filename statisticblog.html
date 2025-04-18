@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Spending Behavior Analysis</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Customer Spending Behavior Analysis</h1>
+    <p>"Exploring Spending Patterns and Demographics with Statistical Analysis"</p>
+  </section>
+
+  <div class="container">
+    <p>The Customer Spending dataset contains demographic data and spending behavior of 200 customers. The goal of this analysis is to uncover insights from the data that can inform business strategies. We apply various statistical methods to gain an understanding of the factors influencing customer spending behavior.</p>
+
+    <p>The analysis includes the following steps:</p>
+    <ul>
+      <li>Data Preprocessing</li>
+      <li>Exploratory Data Analysis (EDA)</li>
+      <li>Descriptive Statistics</li>
+      <li>Skewness and Kurtosis</li>
+      <li>Correlation Analysis</li>
+      <li>Outlier Detection</li>
+      <li>Feature Engineering</li>
+    </ul>
+
+    <p><strong>Data Preprocessing:</strong> In this step, we clean and transform the dataset. Categorical variables such as Gender are encoded, and any missing or incorrect data is handled appropriately to ensure that our models can process the data effectively.</p>
+
+    <p><strong>Exploratory Data Analysis (EDA):</strong> EDA helps us understand the distribution and relationships in the data. We start by inspecting the central tendencies (mean, median) and spread (standard deviation) of key features like annual income and spending scores.</p>
+
+    <p><strong>Descriptive Statistics:</strong> We calculate important statistical measures such as mean, median, standard deviation, and percentiles to understand the key features of our dataset.</p>
+
+    <p><strong>Skewness and Kurtosis:</strong> We evaluate the shape of the data's distribution using skewness and kurtosis to identify any potential outliers or extreme values in the dataset.</p>
+
+    <p><strong>Correlation Analysis:</strong> Using Pearson's correlation coefficient, we measure the strength and direction of the linear relationship between numerical variables such as annual income and spending score.</p>
+
+    <p><strong>Outlier Detection:</strong> We detect outliers in features like income and spending using statistical methods such as the Z-score to identify extreme data points that may skew our analysis.</p>
+
+    <p><strong>Feature Engineering:</strong> We create new features, such as <strong>Spend_per_Transaction</strong>, which is derived from annual income divided by the number of transactions, to gain deeper insights into spending efficiency.</p>
+
+    <p><strong>Evaluation:</strong> After performing the necessary transformations and analysis, we are able to conclude that the most significant factors influencing spending behavior are income and age. These factors are used to create more targeted marketing strategies.</p>
+
+    <p><strong>Conclusion:</strong> The analysis provides valuable insights into customer behavior and helps businesses better understand their customers. Using statistical methods like correlation analysis, descriptive statistics, and feature engineering, we can provide actionable recommendations based on data-driven insights.</p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Source Code</div>
+      <a href="https://github.com/lujaiinnn/STATISTICS_PROJECTS/blob/main/Customer_Spending_Analysis.ipynb" target="_blank">View Notebook</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>
+

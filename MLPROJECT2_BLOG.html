@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glass Identification - Unsupervised Learning</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Glass Identification Project</h1>
+    <p>"Unveiling Hidden Structures in Chemical Data with Unsupervised Learning"</p>
+  </section>
+
+  <div class="container">
+    <p>The Glass Identification dataset is a popular benchmark dataset used in pattern recognition and classification. The goal is to identify the type of glass (e.g., window float, container, etc.) based on its chemical properties such as sodium, magnesium, aluminum, and others. This classification task can benefit from unsupervised learning techniques to uncover hidden patterns and natural groupings without using the label (Type) during training.</p>
+
+    <p>In this blog, we explore a range of unsupervised learning techniques including K-Means Clustering, Hierarchical Agglomerative Clustering, DBSCAN, PCA (Principal Component Analysis), and LDA (Linear Discriminant Analysis, used here for visualization).</p>
+
+    <p>Before applying any algorithm, the data must be preprocessed. Since unsupervised learning relies heavily on distance metrics, standardization is crucial. Using StandardScaler, we normalize all features (except the 'Type' label) to ensure fair clustering.</p>
+
+    <p><strong>K-Means Clustering:</strong> This model separates data into 'k' clusters by minimizing the Within-Cluster Sum of Squares (WCSS). We used the Elbow Method to determine that 6 clusters work best. The results are visualized using PCA for intuitive grouping.</p>
+
+    <p><strong>Hierarchical Clustering:</strong> Agglomerative clustering begins with individual points and merges them based on proximity. A dendrogram helps determine 3 optimal clusters. Again, PCA projections allow easy interpretation.</p>
+
+    <p><strong>DBSCAN:</strong> Unlike previous models, DBSCAN finds clusters based on density. It labels outliers as noise and is great for irregular shapes. The parameters epsilon and min_samples are tuned, revealing distinct groups and noise points in the dataset.</p>
+
+    <p><strong>PCA:</strong> Principal Component Analysis reduces dimensionality for visualization. It preserves variance and simplifies complexity. Our PCA plots show that most data variance lies within the first two principal components.</p>
+
+    <p><strong>LDA:</strong> Though a supervised method, we use LDA here to visualize how well unsupervised clusters match actual class labels. It provides insight into class separability and validates cluster quality.</p>
+
+    <p><strong>Conclusion:</strong> Each unsupervised method offered a unique perspective. K-Means formed clean spherical groups, Hierarchical clustering allowed dendrogram insights, and DBSCAN managed arbitrary shapes and noise. PCA and LDA provided powerful visualization tools. Together, these techniques form a complete unsupervised learning pipeline for glass classification based solely on chemical composition.</p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 Source Code</div>
+      <a href="http://github.com/lujaiinnn/MACHINE_LEARNING_PROJECTS/blob/main/glass_identification_dataset_UNSUPERVISED%20MODELS.ipynb" target="_blank">View Notebook</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>

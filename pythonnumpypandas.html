@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Purchase Behavior Analysis</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Customer Purchase Behavior Analysis</h1>
+    <p>"Unlocking Consumer Insights: Python-Driven Retail Profiling with CLV & Segmentation"</p>
+  </section>
+
+  <div class="container">
+    <p><strong>Project Purpose:</strong> This Python-based analysis investigates customer purchasing patterns using fictional retail data. Through pandas and NumPy, we uncover high-value customers, behavior clusters, and purchase potential. This foundational project sharpens data wrangling, aggregation, and segmentation skills crucial for data analysts.</p>
+
+    <p><strong>Dataset Details:</strong><br>
+      The dataset includes:<br>
+      • Customer ID, Age, Gender, Annual Income, Purchase Amount, Purchase Frequency.<br>
+      • Derived: Customer Lifetime Value (CLV) and Purchasing Power Score.
+    </p>
+
+    <p><strong>Core Techniques & Tools:</strong><br>
+      • DataFrame creation using pandas.<br>
+      • Feature engineering using NumPy.<br>
+      • Grouping and filtering operations (e.g., top spenders, CLV segments).<br>
+      • Binning and categorization using `cut()` and custom logic.<br>
+      • Correlation matrix and pivot analysis for insight extraction.<br>
+      • Exporting insights to CSV.
+    </p>
+
+    <p><strong>Code Highlights:</strong><br>
+      Created a DataFrame:<br>
+      <code>
+        df = pd.DataFrame({...})<br>
+        df['CLV'] = df['Purchase_Amount'] * df['Purchase_Frequency']<br>
+        income_norm = (df['Annual_Income'] - min) / (max - min)<br>
+        df['Power_Score'] = income_norm * df['Purchase_Frequency']
+      </code>
+    </p>
+
+    <p><strong>Segment Discovery:</strong><br>
+      • Top 3 customers based on CLV.<br>
+      • Customers with high purchasing power and age above 30.<br>
+      • High/Medium/Low CLV classification using function logic.<br>
+      • Income segmentation using `pd.cut()`.
+    </p>
+
+    <p><strong>Insights & Patterns:</strong><br>
+      • Positive relationship between income and Power Score.<br>
+      • Female customers outperformed male in purchasing behavior in this sample.<br>
+      • CLV segmentation uncovers target-worthy customers.<br>
+      • Pivot tables reveal gender-income cross-performance.
+    </p>
+
+    <p><strong>Outcome & Resume Value:</strong><br>
+      • Demonstrates analytical thinking with NumPy and pandas.<br>
+      • Strong example for portfolio and job interviews.<br>
+      • Easily extendable with charts, ML models, or dashboards.<br>
+      • Practical use in ecommerce or CRM-based businesses.
+    </p>
+  </div>
+
+  <footer>
+    <div class="code-link-box">
+      <div>🔗 View Full Python Code</div>
+      <a href="#">Download Now</a>
+    </div>
+  </footer>
+
+  <button onclick="topFunction()" id="topBtn" title="Go to top">↑</button>
+
+  <script>
+    function topFunction() {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    }
+  </script>
+</body>
+</html>
