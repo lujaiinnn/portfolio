@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Analysis Dashboard</title>
+
+  <!-- Font Import -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to right, #eef2f3, #ffffff);
+      color: #2d2d2d;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #4b6cb7, #182848);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeInDown 1.2s ease-in-out;
+    }
+
+    .hero h1 {
+      font-family: 'Rock Salt', cursive;
+      font-size: 3.5rem;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 40px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .container p {
+      text-align: justify;
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .container p::first-letter {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #4b6cb7;
+    }
+
+    footer {
+      display: flex;
+      justify-content: center;
+      margin: 60px 0;
+    }
+
+    .code-link-box {
+      background: #f3f3f3;
+      border-left: 6px solid #0077cc;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      font-size: 1.1rem;
+      font-family: 'Rock Salt', cursive;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
+
+    .code-link-box a {
+      color: #0077cc;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    #topBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 100;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 119, 204, 0.3);
+      transition: background-color 0.3s ease;
+    }
+
+    #topBtn:hover {
+      background-color: #005fa3;
+    }
+
+    .code-link-box:hover {
+      background-color: #e6f0ff;
+      transform: scale(1.03);
+    }
+
+    .code-link-box a:hover {
+      color: #005fa3;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Customer Analysis Dashboard</h1>
+    <p>"Unlocking Customer Value with Smart Segmentation & Lifetime Insights"</p>
+  </section>
+
+  <div class="container">
+    <p><strong>1. Introduction to Customer Analysis Dashboard:</strong> In today’s hyper-competitive marketplace, customer-centric strategies are vital for sustainable growth. The Customer Analysis Dashboard created using Tableau enables a deep dive into customer behavior, segmentation, profitability, and lifetime value. This dashboard equips business leaders with data-backed insights to drive loyalty and revenue.</p>
+
+    <p>Key features of the dashboard include:<br>
+    - Customer segmentation by demographics and geography<br>
+    - Sales, profit, and order volume per customer<br>
+    - Customer lifetime value estimation<br>
+    - Top customer profiling and purchase behavior</p>
+
+    <p><strong>2. Understanding Customer Demographics:</strong><br>
+    This section presents a breakdown of customers based on age, gender, location, and segment (Consumer, Corporate, Home Office).<br>
+    Insights:<br>
+    - Corporate customers showed the highest average profit per order.<br>
+    - Consumer segment accounted for the highest sales volume.</p>
+
+    <p><strong>3. Customer Purchase Frequency:</strong><br>
+    Visualizations show order frequency per customer and seasonal trends. Repeat vs. one-time buyers are easily distinguishable.<br>
+    Insights:<br>
+    - A small portion of customers account for a large share of repeat purchases.<br>
+    - Q4 consistently shows higher purchase frequency across years.</p>
+
+    <p><strong>4. Customer Lifetime Value (CLTV):</strong><br>
+    This combines average order value, purchase frequency, and profit per customer.<br>
+    Insights:<br>
+    - High CLTV customers are from the Technology category.<br>
+    - The top 20% of customers generated over 60% of profits.</p>
+
+    <p><strong>5. Customer Segmentation:</strong><br>
+    RFM analysis segments customers into Champions, Loyal, New, At Risk, and Lost.<br>
+    Insights:<br>
+    - “Champions” make frequent, high-value recent purchases.<br>
+    - “At Risk” segment is notable and needs win-back campaigns.</p>
+
+    <p><strong>6. Regional Customer Behavior:</strong><br>
+    This section shows customer data by region with a map and filters.<br>
+    Insights:<br>
+    - West and South regions are the most profitable.<br>
+    - Urban areas show higher return rates.<br>
+    Strategy: Geo-targeted marketing can enhance performance.</p>
+
+    <p><strong>7. High-Value Customer Profiling:</strong><br>
+    Profiles of the top 10 highest revenue customers include order value, frequency, and history.<br>
+    Insights:<br>
+    - Top buyers favor Furniture and Technology categories.<br>
+    - Their average profit margin exceeds 30%.</p>
+
+    <p><strong>8. Final Summary and Recommendations:</strong><br>
+    Key Takeaways:<br>
+    1. Corporate segment yields higher profits.<br>
+    2. Loyal and high-CLTV customers are key drivers.<br>
+    3. 70%+ profit from just 25% of customers.<br>
+    4. Urban regions need return rate management.<br><br>
+    Recommendations:<br>
+    - Personalize marketing by segment.<br>
+    - Expand in high-value regions.<br>
